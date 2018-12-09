@@ -5,14 +5,12 @@ describe('#fizzBuzz function', () => {
   test('it is defined', () => {
     expect(fizzBuzzMethods.fizzBuzz).toBeDefined();
   });
-  
-  
+
   test('Calling fizzbuzz with `5` prints out 5 statements', () => {
     fizzBuzzMethods.fizzBuzz(5);
     expect(console.log.mock.calls.length).toEqual(5);
   });
-  
-  
+
   test('Calling fizzbuzz with 15 prints out the correct values', () => {
     fizzBuzzMethods.fizzBuzz(15); // run the function first
   

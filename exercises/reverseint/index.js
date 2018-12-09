@@ -27,7 +27,10 @@ const reverseInt = (num) => {
     reversedNum += stringNum[i];
   }
 
-  return num < 0 ? 0 - parseInt(reversedNum) : parseInt(reversedNum);
+  //return num < 0 ? 0 - parseInt(reversedNum) : parseInt(reversedNum);
+
+  // after doing some reading I came across Math.sign, which would then let you refactor the above a bit since Math.sign returns 1 or -1.
+  return parseInt(reversedNum) * Math.sign(num)
 }
 
 module.exports = {
