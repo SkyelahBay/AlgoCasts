@@ -47,3 +47,18 @@ describe('#reverseAr function', () => {
   });
 });
 
+describe('#reverseFo function', () => {
+  test('it exists', () => {
+    expect(reverseMethods.reverseAr)
+      .toBeDefined();
+  });
+  test('it reverses a string', () => {
+    expect(reverseMethods.reverseFo('Cinnamon'))
+      .toEqual('nomanniC');
+  });
+  test('it reverses a string', () => {
+    expect(reverseMethods.reverseFo('Honeynut'))
+      .toEqual('tunyenoH');
+  });
+});
+

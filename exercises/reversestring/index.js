@@ -5,19 +5,16 @@
 //   reverse('apple') === 'leppa'
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
+const reverseEz = (str) => str.split('').reverse().join('');
 
-function reverse(str) {
+const reverse = (str) => {
   let reversedString = '';
 
   for(let i = str.length - 1; i >= 0; i--) {
     reversedString += str[i];
   }
-
   return reversedString;
 }
-
-
-const reverseEz = (str) => str.split('').reverse().join('');
 
 
 const reverseAr = (str) => {
@@ -26,14 +23,23 @@ const reverseAr = (str) => {
   for(let i = str.length - 1; i >= 0; i--) {
     reversedStringHolder.push(str[i]);
   }
-
   return reversedStringHolder.join('');
 }
 
+
+const reverseFo = (str) => {
+  let reversedString = '';
+
+  for(let character of str){
+    reversedString = character + reversedString;
+  }
+  return reversedString;
+}
 
 
 module.exports = {
   reverse,
   reverseEz,
-  reverseAr
+  reverseAr,
+  reverseFo
 }
