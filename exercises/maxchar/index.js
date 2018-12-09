@@ -17,7 +17,8 @@ const maxChar = (str) => {
 
   // get a count of each character in the string.
   for(let char of lowerString){
-    charCounts[char] = charCounts.hasOwnProperty(char) ? charCounts[char] + 1 : 1;
+    // since adding to an undefined value returns null / NaN, having || 1 will set it to 1.
+    charCounts[char] = charCounts[char] + 1 || 1
   }
 
   // enumerate over every character and find the most common ones.
