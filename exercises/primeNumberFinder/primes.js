@@ -10,7 +10,6 @@
 */
 
 // we can now assume that this function will never receive anything lower than 3.
-
 const isPrime = (num) => {
   for(let i = 2; i < num; i++){
     if(num % i === 0) return false;
