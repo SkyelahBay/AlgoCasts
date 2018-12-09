@@ -7,6 +7,34 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+const palindromeEz = (str) => str === str.split('').reverse().join('');
+const palindromeNum = (num) => num === parseInt(num.toString().split('').reverse().join(''));
 
-module.exports = palindrome;
+
+const palindromeFo = (str) => {
+  let revCount = str.length - 1;
+
+  for(let char of str){
+    if(char !== str[revCount]) return false;
+    revCount -= 1;
+  }
+
+  return true;
+}
+
+
+const palindrome = (str) => {
+  for(let i = 0; i < str.length/2; i++){
+    if(str[i] !== str[(str.length - 1) - i]) return false
+  }
+
+  return true;
+}
+
+
+module.exports = {
+  palindrome,
+  palindromeEz,
+  palindromeNum,
+  palindromeFo
+}
