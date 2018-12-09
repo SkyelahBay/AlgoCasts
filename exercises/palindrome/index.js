@@ -11,10 +11,11 @@ const palindromeEz = (str) => str === str.split('').reverse().join('');
 const palindromeNum = (num) => num === parseInt(num.toString().split('').reverse().join(''));
 
 
+// using the new 'for of' syntax
 const palindromeFo = (str) => {
-  let revCount = str.length - 1;
+  let revCount = str.length - 1; 
 
-  for(let char of str){
+  for(let char of str){          
     if(char !== str[revCount]) return false;
     revCount -= 1;
   }
@@ -23,6 +24,17 @@ const palindromeFo = (str) => {
 }
 
 
+//using .every
+const palindromeEv = (str) => {
+  let splitString = str.split(''); 
+
+  return splitString.every( (char, index) => {
+    char === (splitString[splitString.length - 1] - index)
+  });
+}
+
+
+// probably the best since it only checks half the array.
 const palindrome = (str) => {
   for(let i = 0; i < str.length/2; i++){
     if(str[i] !== str[(str.length - 1) - i]) return false
