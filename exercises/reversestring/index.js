@@ -9,10 +9,9 @@
 function reverse(str) {
   // the easiest way would be to just use `return str.split('').reverse().join('')`
 
-  let reversedString = '',
-      i = str.length - 1;
+  let reversedString = '';
 
-  for(i; i >= 0; i--) {
+  for(let i = str.length - 1; i >= 0; i--) {
     reversedString += str[i];
   }
 
